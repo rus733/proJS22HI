@@ -1,27 +1,35 @@
 "use strict";
 
-const getDayName = (number, lang) =>
-  ({
-    en: [
-      "Sunday",
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-      "Sunday",
-    ],
-    ru: [
-      "Воскресенье",
-      "Понедельник",
-      "Вторник",
-      "Среда",
-      "Четверг",
-      "Пятница",
-      "Суббота",
-    ],
-  }[lang][number % 7]);
+let lang = "en";
 
-console.log(getDayName(5, "en")); // Friday
-console.log(getDayName(7, "ru")); // Воскресенье
+if (lang == "ru") {
+  console.log("Пн", "Вт", "СР", "Чт", "Пт", "Сб", "Вс");
+} else {
+  console.log("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun");
+}
+
+switch (lang) {
+  case "ru":
+    console.log("Пн", "Вт", "СР", "Чт", "Пт", "Сб", "Вс");
+    break;
+
+  case "en":
+    console.log("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun");
+    break;
+}
+
+let getLangDay = [];
+getLangDay["ru"] = ["Пн", "Вт", "СР", "Чт", "Пт", "Сб", "Вс"];
+getLangDay["en"] = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+//let lang = "ru";
+console.log(getLangDay[lang]);
+
+/////////////////////////////////////////////////////////////////
+
+let namePerson = "Артем";
+
+namePerson === "Артем"
+  ? console.log("директор")
+  : namePerson === "Александр"
+  ? console.log("преподаватель")
+  : console.log("студент");
