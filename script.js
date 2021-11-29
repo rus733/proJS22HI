@@ -1,33 +1,33 @@
 "use strict";
 
-let lang = "en";
+const lang = "en";
 
-if (lang == "ru") {
-  console.log("Пн", "Вт", "СР", "Чт", "Пт", "Сб", "Вс");
+const arrDayName = {
+  en: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+  ru: ["Пн", "Вт", "СР", "Чт", "Пт", "Сб", "Вс"],
+};
+
+if (lang === "ru") {
+  console.log(arrDayName["ru"]);
 } else {
-  console.log("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun");
+  console.log(arrDayName["en"]);
 }
 
 switch (lang) {
   case "ru":
-    console.log("Пн", "Вт", "СР", "Чт", "Пт", "Сб", "Вс");
+    console.log(arrDayName["ru"]);
     break;
-
   case "en":
-    console.log("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun");
+    console.log(arrDayName["en"]);
     break;
 }
 
 let getLangDay = [];
 getLangDay["ru"] = ["Пн", "Вт", "СР", "Чт", "Пт", "Сб", "Вс"];
 getLangDay["en"] = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
-//let lang = "ru";
 console.log(getLangDay[lang]);
 
-/////////////////////////////////////////////////////////////////
-
-let namePerson = "Артем";
-
+const namePerson = "Артем";
 namePerson === "Артем"
   ? console.log("директор")
   : namePerson === "Александр"
