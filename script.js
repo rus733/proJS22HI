@@ -8,9 +8,9 @@ const arrDayName = {
 };
 
 if (lang === "ru") {
-  console.log(arrDayName["ru"]);
+  console.log(arrDayName.ru);
 } else {
-  console.log(arrDayName["en"]);
+  console.log(arrDayName.en);
 }
 
 switch (lang) {
@@ -22,10 +22,7 @@ switch (lang) {
     break;
 }
 
-let getLangDay = [];
-getLangDay["ru"] = ["Пн", "Вт", "СР", "Чт", "Пт", "Сб", "Вс"];
-getLangDay["en"] = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
-console.log(getLangDay[lang]);
+console.log(arrDayName[lang]);
 
 const namePerson = "Артем";
 namePerson === "Артем"
