@@ -1,6 +1,8 @@
 "use strict";
 //Принято
 
+//готовим задание 4
+
 const lang = "en";
 
 const arrDayName = {
