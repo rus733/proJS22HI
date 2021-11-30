@@ -1,35 +1,20 @@
 "use strict";
-//Принято
+// урок 4
 
-//готовим задание 4
+let sliced, str;
 
-const lang = "en";
+let title = prompt(" введите строку");
 
-const arrDayName = {
-  en: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-  ru: ["Пн", "Вт", "СР", "Чт", "Пт", "Сб", "Вс"],
+const myFunc = function (str) {
+  if (typeof str !== "string") {
+    console.log(" Не строка");
+  } else {
+    str = str.trim();
+    sliced = str.slice(0, 30);
+    if (sliced.length < str.length) {
+      console.log((sliced += "..."));
+      return (sliced += "...");
+    }
+  }
 };
-
-if (lang === "ru") {
-  console.log(arrDayName.ru);
-} else {
-  console.log(arrDayName.en);
-}
-
-switch (lang) {
-  case "ru":
-    console.log(arrDayName["ru"]);
-    break;
-  case "en":
-    console.log(arrDayName["en"]);
-    break;
-}
-
-console.log(arrDayName[lang]);
-
-const namePerson = "Артем";
-namePerson === "Артем"
-  ? console.log("директор")
-  : namePerson === "Александр"
-  ? console.log("преподаватель")
-  : console.log("студент");
+myFunc(title);
