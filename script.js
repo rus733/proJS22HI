@@ -4,12 +4,12 @@
 
 //ВАРИАНТ 2
 
-/* функция добавления ведущих нулей */
-/* (если число меньше десяти, перед числом добавляем ноль) */
-
 let declinationHours = ["час", "часа", "часов"];
 let declinationMinuts = ["минута", "минуты", "минут"];
 let declinationSeconds = ["секунда", "секунды", "секунд"];
+
+/* функция добавления ведущих нулей */
+/* (если число меньше десяти, перед числом добавляем ноль) */
 
 function zero_first_format(value) {
   if (value < 10) {
@@ -22,15 +22,10 @@ function zero_first_format(value) {
 
 function date_time() {
   const arrDay = ["Воскресенье", "Понедельник ", "Вторник", "Среда ", "Четверг", "Пятница", "Суббота"];
-
   const arr = ["Января", "Февраля", "Марта", "Апреля", "Мая", "Июня", "Июля", "Августа", "Сентября", "Октября", "Ноября", "Декабря"];
-
   const current_datetime = new Date();
-
   const day = zero_first_format(current_datetime.getDate());
-
   const dayWeek = current_datetime.getDay();
-
   const month = zero_first_format(current_datetime.getMonth() + 1);
   const year = current_datetime.getFullYear();
   const hours = zero_first_format(current_datetime.getHours());
@@ -61,10 +56,7 @@ function date_time() {
   );
 }
 
-//let declinationHours = ["час", "часа", "часов"];
-//let declinationMinuts = ["минута", "минуты", "минут"];
-//let declinationSeconds = ["секунда", "секунды", "секунд"];
-
+//функция представления названий минут , секунд и часов в правильном склонении
 const timeNameForm = function (arrName, n) {
   let text_forms = arrName;
 
@@ -74,10 +66,8 @@ const timeNameForm = function (arrName, n) {
   switch (true) {
     case n > 10 && n < 20:
       return text_forms[2];
-
     case n1 > 1 && n1 < 5:
       return text_forms[1];
-
     case n1 == 1:
       return text_forms[0];
 
@@ -87,63 +77,7 @@ const timeNameForm = function (arrName, n) {
 };
 
 // Для вывода в формате (а) напишите функцию, которая будет менять склонение слов в зависимости от числа, "час, часов, часа"
-/*
-const hoursName = function () {
-  let hours;
-  let message;
-  if (hours === 1 || hours === 21) {
-    message = "час";
-  } else if ((2 <= hours && hours < 5) || (22 <= hours && hours <= 24)) {
-    message = "часа";
-  } else {
-    message = "часов";
-  }
 
-  return message;
-};
-*/
-
-//Для вывода в формате (а) напишите функцию, которая будет менять склонение слов в зависимости от числа, "минут"
-
-/*
-const minutesName = function (n) {
-  let text_forms = ["минута", "минуты", "минут"];
-  n = Math.abs(n) % 100;
-  console.log(Math.abs(n));
-
-  var n1 = n % 10;
-  if (n > 10 && n < 20) {
-    return text_forms[2];
-  }
-  if (n1 > 1 && n1 < 5) {
-    return text_forms[1];
-  }
-  if (n1 == 1) {
-    return text_forms[0];
-  }
-  return text_forms[2];
-};
-
-//Для вывода в формате (а) напишите функцию, которая будет менять склонение слов в зависимости от числа, "секунд"
-
-const secondsName = function (n) {
-  let text_forms = ["секунда", "секунды", "секунд"];
-  n = Math.abs(n) % 100;
-  var n1 = n % 10;
-  if (n > 10 && n < 20) {
-    return text_forms[2];
-  }
-  if (n1 > 1 && n1 < 5) {
-    return text_forms[1];
-  }
-  if (n1 == 1) {
-    return text_forms[0];
-  }
-  return text_forms[2];
-};
-
-
-*/
 // Функция для вывода  на страницу текущую дату и время в  формате '04.02.2020 - 21:05:33'
 
 function date_time_full() {
