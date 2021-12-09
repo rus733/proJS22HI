@@ -1,4 +1,28 @@
 "use strict";
+
+//  готовим задание 10hi
+
+function createNewLi() {
+  const inputText = document.querySelector('[type = "text"]');
+  console.dir(inputText.value);
+  let newElementLi = document.createElement("li");
+  newElementLi.innerHTML = inputText.value;
+
+  const ulParent = document.querySelector("ul");
+  ulParent.append(newElementLi); // вставить newLi в конец <ul>
+}
+
+button.addEventListener("click", createNewLi);
+
+/*
+button.onclick = () => {
+  for (let i = 1; i <= 3; i++) {
+    alert("Кролик номер " + i);
+  }
+};
+*/
+
+/*
 //Принято
 
 //готовим задание 4
@@ -33,3 +57,4 @@ namePerson === "Артем"
   : namePerson === "Александр"
   ? console.log("преподаватель")
   : console.log("студент");
+*/
