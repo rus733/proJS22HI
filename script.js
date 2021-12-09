@@ -4,9 +4,9 @@
 
 //ВАРИАНТ 2
 
-let declinationHours = ["час", "часа", "часов"];
-let declinationMinuts = ["минута", "минуты", "минут"];
-let declinationSeconds = ["секунда", "секунды", "секунд"];
+const declinationHours = ["час", "часа", "часов"];
+const declinationMinuts = ["минута", "минуты", "минут"];
+const declinationSeconds = ["секунда", "секунды", "секунд"];
 
 /* функция добавления ведущих нулей */
 /* (если число меньше десяти, перед числом добавляем ноль) */
@@ -58,21 +58,22 @@ function date_time() {
 
 //функция представления названий минут , секунд и часов в правильном склонении
 const timeNameForm = function (arrName, n) {
-  let text_forms = arrName;
+  //let text_forms = arrName;
 
   n = Math.abs(n) % 100;
-  var n1 = n % 10;
+
+  const n1 = n % 10;
 
   switch (true) {
     case n > 10 && n < 20:
-      return text_forms[2];
+      return arrName[2];
     case n1 > 1 && n1 < 5:
-      return text_forms[1];
+      return arrName[1];
     case n1 == 1:
-      return text_forms[0];
+      return arrName[0];
 
     default:
-      return text_forms[2];
+      return arrName[2];
   }
 };
 
@@ -82,11 +83,8 @@ const timeNameForm = function (arrName, n) {
 
 function date_time_full() {
   const current_datetime = new Date();
-
   const day = zero_first_format(current_datetime.getDate());
-
   const dayWeek = current_datetime.getDay();
-
   const month = zero_first_format(current_datetime.getMonth() + 1);
   const year = current_datetime.getFullYear();
   const hours = zero_first_format(current_datetime.getHours());
