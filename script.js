@@ -1,29 +1,49 @@
 'use strict';
 
-'use strict';
+//готовим к сдаче  задание урока  11
 
-//  готовим задание 10hi
+const btn = document.getElementById('btn');
+const eBtn = document.getElementById('e_btn');
+const inputText = document.querySelector('#text');
+const square = document.querySelector('#square');
+const span = document.getElementById('text-span');
+const inputRange = document.querySelector('[type=range]');
+const circle = document.getElementById('circle');
 
-const button = document.getElementById('button');
+// задание 1
 
-button.onclick = function () {
-  const inputText = document.querySelector('[type = "text"]');
-  const newElementLi = document.createElement('li');
-  const ulParent = document.querySelector('ul');
-  newElementLi.innerHTML = inputText.value;
-  ulParent.append(newElementLi); // вставить newLi в конец <ul>
-  inputText.value = '';
+let сolorSquare = '';
+
+const readInputText = (event) => {
+  сolorSquare = event.target.value;
 };
 
-// еще работал и этот способ
+const newColorSquare = function (event) {
+  square.style.backgroundColor = сolorSquare;
+};
+
+inputText.addEventListener('input', readInputText);
+btn.addEventListener('click', newColorSquare);
+
 /*
-const createNewLi = function () {
-  const inputText = document.querySelector('[type = "text"]');
-  const newElementLi = document.createElement("li");
-  const ulParent = document.querySelector("ul");
-  newElementLi.innerHTML = inputText.value;
-  ulParent.append(newElementLi); // вставить newLi в конец <ul>
+
+// задание 1 упростил немного 
+
+const newColorSquare = function (event) {
+
+  inputText.addEventListener('input', square.style.backgroundColor = (event) => event.target.value);
 };
 
-button.addEventListener("click", createNewLi);
+btn.addEventListener('click', newColorSquare);
 */
+
+// задание 2
+eBtn.style.display = 'none';
+
+//задание 3
+const circleSize = function (event) {
+  circle.style.height = inputRange.value + '%';
+  circle.style.width = inputRange.value + '%';
+};
+
+inputRange.addEventListener('input', circleSize);
