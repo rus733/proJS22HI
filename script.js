@@ -12,17 +12,18 @@ const circle = document.getElementById('circle');
 
 // задание 1
 
-let text = '';
+let сolorSquare = '';
 
 const readInputText = (event) => {
-  text = event.target.value;
+  сolorSquare = event.target.value;
 };
 
 const newColorSquare = function (event) {
-  square.style.backgroundColor = text;
+  square.style.backgroundColor = сolorSquare;
 };
 
 inputText.addEventListener('input', readInputText);
+
 btn.addEventListener('click', newColorSquare);
 
 // задание 2
