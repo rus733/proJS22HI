@@ -23,7 +23,6 @@ const newColorSquare = function (event) {
 };
 
 inputText.addEventListener('input', readInputText);
-
 btn.addEventListener('click', newColorSquare);
 
 // задание 2
