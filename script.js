@@ -1,37 +1,29 @@
 'use strict';
 
-//готовим задание урока  11
+'use strict';
 
-const btn = document.getElementById('btn');
-const eBtn = document.getElementById('e_btn');
-const text = document.querySelector('#text');
-const square = document.querySelector('#square');
-const span = document.getElementById('text-span');
-const range = document.querySelector('[type=range]');
-const circle = document.getElementById('circle');
+//  готовим задание 10hi
 
-// задание 1
+const button = document.getElementById('button');
 
-let inputText = '';
-
-const logger = (event) => {
-  inputText = event.target.value;
+button.onclick = function () {
+  const inputText = document.querySelector('[type = "text"]');
+  const newElementLi = document.createElement('li');
+  const ulParent = document.querySelector('ul');
+  newElementLi.innerHTML = inputText.value;
+  ulParent.append(newElementLi); // вставить newLi в конец <ul>
+  inputText.value = '';
 };
 
-const newF = function (event) {
-  square.style.backgroundColor = inputText;
+// еще работал и этот способ
+/*
+const createNewLi = function () {
+  const inputText = document.querySelector('[type = "text"]');
+  const newElementLi = document.createElement("li");
+  const ulParent = document.querySelector("ul");
+  newElementLi.innerHTML = inputText.value;
+  ulParent.append(newElementLi); // вставить newLi в конец <ul>
 };
 
-text.addEventListener('input', logger);
-btn.addEventListener('click', newF);
-
-// задание 2
-eBtn.style.display = 'none';
-
-//задание 3
-const circleSize = function (event) {
-  circle.style.height = range.value + '%';
-  circle.style.width = range.value + '%';
-};
-
-range.addEventListener('input', circleSize);
+button.addEventListener("click", createNewLi);
+*/
