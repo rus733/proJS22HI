@@ -1,35 +1,37 @@
-"use strict";
-//Принято
+'use strict';
 
-//готовим задание 4
+//готовим задание урока  11
 
-const lang = "en";
+const btn = document.getElementById('btn');
+const eBtn = document.getElementById('e_btn');
+const text = document.querySelector('#text');
+const square = document.querySelector('#square');
+const span = document.getElementById('text-span');
+const range = document.querySelector('[type=range]');
+const circle = document.getElementById('circle');
 
-const arrDayName = {
-  en: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-  ru: ["Пн", "Вт", "СР", "Чт", "Пт", "Сб", "Вс"],
+// задание 1
+
+let inputText = '';
+
+const logger = (event) => {
+  inputText = event.target.value;
 };
 
-if (lang === "ru") {
-  console.log(arrDayName.ru);
-} else {
-  console.log(arrDayName.en);
-}
+const newF = function (event) {
+  square.style.backgroundColor = inputText;
+};
 
-switch (lang) {
-  case "ru":
-    console.log(arrDayName["ru"]);
-    break;
-  case "en":
-    console.log(arrDayName["en"]);
-    break;
-}
+text.addEventListener('input', logger);
+btn.addEventListener('click', newF);
 
-console.log(arrDayName[lang]);
+// задание 2
+eBtn.style.display = 'none';
 
-const namePerson = "Артем";
-namePerson === "Артем"
-  ? console.log("директор")
-  : namePerson === "Александр"
-  ? console.log("преподаватель")
-  : console.log("студент");
+//задание 3
+const circleSize = function (event) {
+  circle.style.height = range.value + '%';
+  circle.style.width = range.value + '%';
+};
+
+range.addEventListener('input', circleSize);
