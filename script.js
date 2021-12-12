@@ -1,6 +1,6 @@
 'use strict';
 
-//готовим задание урока  11
+//готовим к сдаче  задание урока  11
 
 const btn = document.getElementById('btn');
 const eBtn = document.getElementById('e_btn');
@@ -24,6 +24,18 @@ const newColorSquare = function (event) {
 
 inputText.addEventListener('input', readInputText);
 btn.addEventListener('click', newColorSquare);
+
+/*
+
+// задание 1 упростил немного 
+
+const newColorSquare = function (event) {
+
+  inputText.addEventListener('input', square.style.backgroundColor = (event) => event.target.value);
+};
+
+btn.addEventListener('click', newColorSquare);
+*/
 
 // задание 2
 eBtn.style.display = 'none';
