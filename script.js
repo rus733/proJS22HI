@@ -7,6 +7,7 @@ const eBtn = document.getElementById('e_btn');
 const inputText = document.querySelector('#text');
 const square = document.querySelector('#square');
 const span = document.getElementById('text-span');
+const spanRange = document.getElementById('range-span');
 const inputRange = document.querySelector('[type=range]');
 const circle = document.getElementById('circle');
 
@@ -42,6 +43,7 @@ eBtn.style.display = 'none';
 
 //задание 3
 const circleSize = function (event) {
+  spanRange.textContent = inputRange.value + '%';
   circle.style.height = inputRange.value + '%';
   circle.style.width = inputRange.value + '%';
 };
