@@ -24,7 +24,7 @@ btn.addEventListener('click', newColorSquare);
 eBtn.style.display = 'none';
 
 //задание 3
-spanRange.textContent = '50%';
+spanRange.textContent = inputRange.value + '%';
 const circleSize = () => {
   spanRange.textContent = inputRange.value + '%';
   circle.style.height = inputRange.value + '%';
